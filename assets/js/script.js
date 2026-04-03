@@ -45,17 +45,18 @@ filterBtn.forEach((btn, index) => {
     lastClickedBtn = this;
   });
 });
-
-navigationLinks.forEach((link, linkIndex) => {
+navigationLinks.forEach((link) => {
   link.addEventListener("click", function() {
-    pages.forEach((page, pageIndex) => {
-      if (this.innerText.toLowerCase() === page.dataset.page) {
+    const targetPage = this.innerHTML.toLowerCase().trim();
+    
+    pages.forEach((page, index) => {
+      if (targetPage === page.dataset.page) {
         page.classList.add("active");
-        navigationLinks[linkIndex].classList.add("active");
+        navigationLinks[index].classList.add("active");
         window.scrollTo(0, 0);
       } else {
         page.classList.remove("active");
-        navigationLinks[pageIndex].classList.remove("active");
+        navigationLinks[index].classList.remove("active");
       }
     });
   });
