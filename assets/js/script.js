@@ -61,3 +61,6 @@ navigationLinks.forEach((link) => {
     });
   });
 });
+
+// Initialize by showing all projects
+applyFilter("all");
