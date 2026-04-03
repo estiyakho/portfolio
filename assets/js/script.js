@@ -53,7 +53,7 @@ navigationLinks.forEach((link) => {
       if (targetPage === page.dataset.page) {
         page.classList.add("active");
         navigationLinks[index].classList.add("active");
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         page.classList.remove("active");
         navigationLinks[index].classList.remove("active");
